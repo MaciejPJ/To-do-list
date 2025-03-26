@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="task-entry">
+    <h2>{{ task.title }}</h2>
+</div>
+<div>
+    {% if task.author.pk == request.user.pk %}
+    <p><a href="{% url 'task_edit' task.pk %}">Edit</a>
+    <a href="{% url 'task_delete' task.pk %}">Delete</a>
+    </p>
+    {% endif %}
+    <p>Back to <a href="{% url 'task_list' %}">All Tasks</a>.</p>
+</div>
+{% endblock content %}

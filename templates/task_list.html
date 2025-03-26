@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Tasks{% endblock title %}
+
+{% block content %}
+{% for task in task_list %}
+<div>
+    <div>
+        <span>
+            <a href="{{ task.get_absolute_url }}">{{ forloop.counter }}.{{ task.title }}</a>
+        </span> &middot;
+        <span>
+            Priority: {{ task.get_priority_display }} |
+            Due: {{ task.due_date }}
+        </span>
+    </div>
+    <div>
+        {% if task.author.pk == request.user.pk %}
+        <a href="{% url 'task_edit' task.pk %}">Edit</a>
+        <a href="{% url 'task_delete' task.pk %}">Delete</a>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}To-Do List{% endblock title %}</title>
+  </head>
+  <body>
+    <header style="padding: 10px; background-color: #f2f2f2; margin-bottom: 20px;">
+      {% if user.is_authenticated %}
+        <span>User: <strong>{{ user.username }}</strong></span> |
+        <form method="post" action="{% url 'logout' %}" style="float: right;">
+          {% csrf_token %}
+          <button type="submit">Log out</button>
+        </form>
+        <a href="{% url 'task_new' %}">Add new task</a>|
+        <a href="{% url 'task_list' %}">List all tasks</a>
+      {% else %}
+        <span>You are not logged in</span> |
+        <a href="{% url 'login' %}">Log in</a>
+      {% endif %}
+    </header>
+
+    <main>
+      {% block content %}
+      {% endblock content %}
+    </main>
+  </body>
+</html>
