@@ -1,0 +1,81 @@
+:root {
+    --button-color: rgb(82, 78, 78)
+}
+
+/* Reset default browswer styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body style */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #1b1b1b;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-links {
+    display: flex;
+    gap: 10px; /* Odstęp między linkami */
+}
+
+/* Buttons related to tasks */
+header a {
+    background: var(--button-color);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+header a:hover{
+    background: rgb(51, 51, 51);
+}
+
+header form {
+    display: inline;
+}
+ /* Log out button */
+header button {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+header button:hover {
+    background: #c82333;
+}
+
+/* Main content */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    background: ivory;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
