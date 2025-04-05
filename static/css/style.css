@@ -1,5 +1,12 @@
+/* Zmienne globalne */
 :root {
-    --button-color: rgb(82, 78, 78)
+    --primary-bg: #000000; /* Main background color */
+    --primary-text: white;  /* Text color */
+    --danger: #dc3545;      /* Log out button color */
+    --danger-hover: #c82333; /* Hover log out button color */
+    --secondary-bg: rgb(82, 78, 78); /* Buttons color */
+    --secondary-hover: rgb(51, 51, 51); /* Hover buttons color */
+    --button-color: rgb(82, 78, 78); /* Color of butotns in headline */
 }
 
 /* Reset default browswer styles */
@@ -18,8 +25,8 @@ body {
 }
 
 header {
-    background: #1b1b1b;
-    color: white;
+    background: var(--primary-bg);
+    color: var(--primary-text);
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -37,10 +44,10 @@ header {
     gap: 10px; /* Odstęp między linkami */
 }
 
-/* Buttons related to tasks */
+/* Linki w nagłówku */
 header a {
     background: var(--button-color);
-    color: white;
+    color: var(--primary-text);
     border: none;
     padding: 8px 12px;
     cursor: pointer;
@@ -48,17 +55,18 @@ header a {
     text-decoration: none;
 }
 
-header a:hover{
-    background: rgb(51, 51, 51);
+header a:hover {
+    background: var(--secondary-hover);
 }
 
 header form {
     display: inline;
 }
- /* Log out button */
+
+/* Przycisk wylogowania */
 header button {
-    background: #dc3545;
-    color: white;
+    background: var(--danger);
+    color: var(--primary-text);
     border: none;
     padding: 8px 12px;
     cursor: pointer;
@@ -66,7 +74,7 @@ header button {
 }
 
 header button:hover {
-    background: #c82333;
+    background: var(--danger-hover);
 }
 
 /* Main content */
@@ -79,3 +87,51 @@ main {
     border-radius: 8px;
 }
 
+/* Homepage styles */
+.homepage {
+    text-align: center;
+    padding: 30px;
+}
+
+.welcome {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-bg); /* Czarny tekst */
+}
+
+/* Log out button on homepage */
+.logout-btn {
+    background: var(--danger);
+    color: var(--primary-text);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: var(--danger-hover);
+}
+
+/* Login & Signup links */
+.auth-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.auth-links a {
+    background: var(--secondary-bg);
+    color: var(--primary-text);
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.auth-links a:hover {
+    background: var(--secondary-hover);
+}

@@ -1,15 +1,31 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block title %}Task Detail{% endblock title %}
 
 {% block content %}
-<div class="task-entry">
-    <h2>{{ task.title }}</h2>
-</div>
-<div>
+<link rel="stylesheet" href="{% static 'css/task_list.css' %}">
+
+<div class="task-detail-container">
+    <div class="task-entry">
+        <h2>{{ task.title }}</h2>
+    </div>
+
+    <div class="task-info">
+        <p><strong>Priority:</strong> {{ task.get_priority_display }}</p>
+        <p><strong>Due date:</strong> {{ task.due_date }}</p>
+        <p><strong>Description:</strong> {{ task.description|linebreaks }}</p>
+    </div>
+
     {% if task.author.pk == request.user.pk %}
-    <p><a href="{% url 'task_edit' task.pk %}">Edit</a>
-    <a href="{% url 'task_delete' task.pk %}">Delete</a>
-    </p>
+        <div class="task-actions">
+            <a href="{% url 'task_edit' task.pk %}">Edit</a>
+            <a href="{% url 'task_delete' task.pk %}">Delete</a>
+        </div>
     {% endif %}
-    <p>Back to <a href="{% url 'task_list' %}">All Tasks</a>.</p>
+
+    <div class="back-link">
+        <a href="{% url 'task_list' %}">← Back to All Tasks</a>
+    </div>
 </div>
 {% endblock content %}

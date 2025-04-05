@@ -1,0 +1,146 @@
+/* Task List Styles */
+.task-list-container {
+    margin-top: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-item {
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-item a {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.task-item a:hover {
+    text-decoration: underline;
+}
+
+.task-info {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.task-actions a {
+    background: var(--button-color);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.task-actions a:hover {
+    background: rgb(51, 51, 51);
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.task-priority {
+    font-weight: bold;
+    color: #ff5722;
+}
+
+.task-due-date {
+    font-style: italic;
+    color: #28a745;
+}
+
+.task-detail-container {
+    max-width: 700px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.task-entry h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #343a40;
+}
+
+.task-info p {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.task-actions a {
+    background: var(--button-color);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.task-actions a:hover {
+    background: rgb(51, 51, 51);
+}
+
+.back-link {
+    margin-top: 25px;
+}
+
+.back-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+.task-entry {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.task-meta {
+    margin-top: 5px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.priority {
+    font-weight: bold;
+}
+
+.priority.high {
+    color: #dc3545;
+}
+
+.priority.medium {
+    color: #fd7e14;
+}
+
+.priority.low {
+    color: #28a745;
+}
+
+
